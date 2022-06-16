@@ -1,0 +1,311 @@
+
+last session:
+1. data types
+2. programs
+	i) compile time initialization
+	ii) runtime initialization
+----------------------------------------------------------------------
+ii) runtime initialization:
+	1. DataInputStream (we should apply all the data types)
+	2. BufferedReader
+	3. Scanner
+	4. Console
+	5. difference 
+---------------------------------------------------------------------
+com.datainputstream.example
+
+1. DataInputStream:
+i) it is a predefined class
+ii) it is used to read the input from user.
+------------------------------------------------------
+import java.io.*;
+
+public class RuntimeByteExample
+{
+	public static void main(String palani[])throws IOException
+	{	
+		DataInputStream dis=new DataInputStream(System.in);
+		System.out.println("Enter 2 Numbers:");
+		byte a,b,c;
+		a=Byte.parseByte(dis.readLine());
+		b=Byte.parseByte(dis.readLine());
+		c=(byte)(a+b);
+		System.out.println("Addition of 2 Byte values:\t"+c);
+	}
+}
+Note:	-128 to 127
+
+import java.io.*;
+import----------------------> it is a predefined keyword. it is used to import the package
+java--------------------------> it is a primary package name. (package is nothing: it is looks like a folder)
+.-------------------------------> it is an operator. it is used to link between primary and subpackage
+io-----------------------------> input/output. it is a subpackagee of Java.
+*------------------------------> a package it contains pre defined classes/ interfaces/ methods. To access all class,interface,method
+import java.io.DataInputStream;
+import java.io.IOException
+import java.io.Byte;
+import java.io.readLine();
+;--------------------------------> this symbol indicates to END of the statement.
+
+public class RuntimeByteExample:
+
+public---------------------------> it is an access specifier. it is a pre defined keyword. to access from anywhere.
+class-----------------------------> it is a pre defined keyword. it is used to create a class.
+RuntimeByteExample------> it is a user defined class name.
+{-----------------------------------> curly braces indicates to starting of the class.
+
+
+public static void main(String args[])throws IOException:
+public----------------------> to access anywhere
+static-----------------------> it is a pre defined keyword. No need to create object (without object) can access main().
+		       RuntimeByteExample.main():
+		       JVM---> java virtual machine
+		       JVM will search static is there or not while executing any code.
+		       JVM will give first priority of static.
+void------------------------> it is a pre defined keyword. generally void means-----Null;
+		      void does not return any value to the main method.
+main()----------------------> i is a pre defined method name.
+String args[]--------------> it is a parameter.
+String-----------------------> it is pre defined class
+args-------------------------> it is user defined variable name, or array name
+[]-----------------------------> this symbol indicates 1D array
+
+throws IOException:---> right now I don't want to handle any exception jvm will handle all the exception that's why i used throws IOException here
+
+throws---------------------> it is a predefined keyword.
+IOException--------------> it is a pre defined class.
+{----------------------------> it indicates to start of the main()
+
+int a=10;
+DataInputStream dis=new DataInputStream(System.in);
+
+1. object initiated or creation
+2. allocated for memory space for that object.
+3. to make a connection between our program to keyboard.
+
+new---------------------> it is an operator or keyword. it create object and allocate memory for that object.
+
+DataInputStream(System.in);-------------> it is called as constructor.
+System.in:---------------------> to make aconnection between our code to keyboard
+System--------------------------> it is pre defined class
+in---------------------------------> it is field or object
+
+DataInputStream-----------> it is a pre defined class.
+dis------------------------------> it is a user defined object/ reference variable.
+
+System.out.println("enter 2 number");-------------> it is an output statement. it is used to display or print the result.
+
+byte a,b,c;------------------------> 3 variables declared here with byte data type;
+a=Byte.parseByte(dis.readLine());
+Byte--------------> it is a predefined wrapper class.
+parseByte()----------> it is pre defined method.
+readLine()------------> it is a pre defined method. it is used to read input from user.
+
+Note: in java any input will consider as String.
+
+b=Byte.parseByte(dis.readLine()); ------> read input from user and converted to byte format stored into a variable.
+
+c=(byte)(a+b);
+c=a+b;
+
+
+Note: this type conversion((byte)(a+b);) only for byte and short data type.
+
+System.out.println("Addition of 2 Byte values:\t"+c);
+System-----------------> it is a pre defined class.
+out-----------------------> field or object
+println()----------------> it is a pre defined method.
+"control string"----> you can pass any message.
+
+\t---------> tab key: it gives 8 character space.
+
+"Addition of 2 Byte values:\t"+c: here(+) concatenate both values.
+
+}----------------> close the main()
+}----------------> close the class.
+-------------------------------------------------------------
+
+byte--------------> Byte.parseByte(dis.readLine());
+short-------------> Short.parseShort(dis.readLine());
+int-----------------> Integer.parseInt(dis.readLine());
+long---------------> Long.parseLong(dis.readLine());
+
+float--------------> Float.parseFloat(dis.readLine());
+double----------> Double.parseDouble(dis.readLine());
+
+char
+String
+
+boolean---------> Boolean.parseBoolean(dis.readLine());
+---------------------------------------------------------------------------
+
+import java.io.*;
+public class RuntimeCharacterExample
+{
+	public static void main(String args[])throws IOException
+	{
+		DataInputStream dis=new DataInputStream(System.in);
+		System.out.println("Enter your gender:");
+		char Gender;
+		Gender=(char)dis.read();
+		System.out.println("My gender is:\t"+Gender);
+	}
+}
+-------------------------------------------------------------------------
+import java.io.*;
+public class RuntimeStringExample
+{
+	public static void main(String args[])throws IOException
+	{
+		DataInputStream dis=new DataInputStream(System.in);
+		System.out.println("Enter Your Name:");
+		String MyName=dis.readLine();
+		System.out.println("My Name is:\t"+MyName);
+	}
+}
+----------------------------------------------------------------------------------
+
+com. bufferedReader.example
+
+2. BufferedReader
+it is a predefined class. 
+it is used to read the input from user.
+
+
+import java.io.*;
+public class BufferedByteExample
+{
+	public static void main(String args[])throws IOException
+	{
+		
+		BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter 2 numbers");
+		byte a,b,c;
+		a=Byte.parseByte(reader.readLine());
+		b=Byte.parseByte(reader.readLine());
+		c=(byte)(a+b);
+		System.out.println("Adition of 2 bytes:\t"+c);
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------
+3. Scanner
+it is a pre defined class
+it s used to read input from user.
+
+com.scanner.example
+
+import java.util.*;
+
+public class ByteScannerExample
+{
+	public static void main(String args[])
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter 2 Numbers:");
+		byte a,b,c;
+		a=scan.nextByte();
+		b=scan.nextByte();
+		c=(byte)(a+b);
+		System.out.println("Addition of 2 Numbers :\t"+c);
+	}
+}
+
+byte	:	nextByte()
+short	:	nextShort()
+int	:	nextInt()
+long	:	nextLong()
+float	:	nextFloat()
+double	:	nextDouble()
+char	:	
+String	:
+boolean	:	nextBoolean()
+-------------------------------------------------------------------------------
+
+import java.util.*;
+
+public class CharScannerExample
+{
+	public static void main(String args[])
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter your Gender");
+		char Gender;
+		Gender=scan.next().charAt(0);
+		System.out.println("My Gender is:\t"+Gender);
+	}
+}
+Female
+charAt(0);	: it is pre defined method. it is read only single character.  here 0-----> index position
+F---0
+e---1
+m---2
+a---3
+l---4
+e---5
+------------------------------------------------------------------------------------------------
+impor java.uti.*;
+public class StringScannerExample
+{
+	public static void main(String args[])
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter your Name");
+		String empName=scan.next();		//scan.nextLine()
+		System.out.println("Employee name is:\t"+empName);
+	}
+}
+Enter your name:
+Siva kumar	:	input
+
+Siva		:	scan.next()
+Siva kumar	:	scan.nextLine()
+---------------------------------------------------------------------------------------------
+4. Console
+it is a pre defined class
+it is used to read input from user
+developer never prefer to this class
+Console class never support IDE(Integrated Development Environment)
+
+import java.io.*;
+
+public class ConsoleDemoExample
+{
+	public static void main(String args[])
+	{
+		Console cis=System.console();
+		byte a,b,c;
+		System.out.println("Enter the 2 Numbers");
+		a=Byte.parseByte(cis.readLine());
+		b=Byte.parseByte(cis.readLine());
+		c=(byte)(a+b);
+		System.out.println(c);
+	}
+}
+save		:	ConsoleDemoExample.java
+compile command	:	javac ConsoleDemoExample.java---------------> press enter
+run command	:	java ConsoleDemoExample-----------------------> press enter
+---------------------------------------------------------------------------------------------------------------------------------
+5. Difference DatainputStream  ,  BufferedReader    ,   Scanner
+
+
+Sno	DataInputStream			BufferedReader			Scanner
+-------------------------------------------------------------------------------------------------------------------------------------------------
+1.	introduced in 1.0			introduced in 1.1			introduced 1.5
+
+2.	import java.io.*;			import java.io.*;			import java.util.*;
+
+3.	works with binary data		works with character and text data	works both(but only read small amount of data)
+
+4.	consume less amount of memory space	consume lot of memory space(forEx:8kb)	consume less memory space(1kb)
+
+5.	Exception must be mention		Exception must be mention		No need
+
+6.	type conversion is required		type conversion is required		No need
+
+7.	it handles limited number of characters	it is an wide scope			Nill
+
+8.	you can pass input one by one		you can pass input one by one		read multiple input in same line
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
